@@ -5,3 +5,4 @@ Inicio do Projeto - 17/06/2024
 1- Site de Catalogo de Filmes, Series e Musicas.
 2- Produção do Site ainda em andamento.
 3- Meu primeiro projeto sério com HTML, CSS e JAVASCRIPT
+4- Futuramente farei um vídeo mostrando cada funcionalidade
