@@ -20,43 +20,43 @@
 </head>
 
 <body>
-    <div class="perfil-button" hidden>
-        <a href="">
+    <div id="perfil-button" class="hidden">
+        <a href="#">
             <p>Configurações da Conta</p>
             <img class="another-window-img" src="./img/redes/another window.png" alt="">
         </a>
-        <a href="">
+        <a href="#">
             <p>Plano de assinatura</p>
             <img class="another-window-img" src="./img/redes/another window.png" alt="">
         </a>
-        <div>
-            <a href="">
+        <div id="sair-perfil">
+            <a href="#">
                 <p>Sair</p>
                 <img class="another-window-img" src="./img/redes/another window.png" alt="">
             </a>
         </div>
     </div>
-    <div class="more-options-tab" hidden>
+    <div id="more-options-tab" class="hidden">
         <div class="close-button">
-            <img id="xbutton" src="./img/redes/X.png" alt="">
+            <img id="xbutton" src="./img/redes/X.png" alt="" onclick="closeMOS()">
         </div>
-        <div>
-            <a class="window-button" href="">
+        <div id="mo-buttons">
+            <a class="window-button" href="#">
                 <p>Sobre nós</p>
                 <img class="another-window-img" src="./img/redes/another window.png" alt="">
             </a>
-            <a class="window-button" href="">
+            <a class="window-button" href="#">
                 <p>Entre em contato conosco</p>
                 <img class="another-window-img" src="./img/redes/another window.png" alt="">
             </a>
-            <a class="window-button" href="">
+            <a class="window-button" href="#">
                 <p>Deixe sua sugestão</p>
                 <img class="another-window-img" src="./img/redes/another window.png" alt="">
             </a>
         </div>
-        <div class="redes-sociais">
-            <div><p>Nos siga nas redes sociais</p></div>
-            <div>
+        <div id="redes-sociais">
+            <div><p id="text-sociais">Nos siga nas redes sociais</p></div>
+            <div id="icon-sociais">
                 <a href=""><img src="./img/redes/twitter icon.png" alt="Twitter"></a>
                 <a href=""><img src="./img/redes/instagram icon.png" alt="Instagram"></a>
                 <a href=""><img src="./img/redes/facebook icon.png" alt="Facebook"></a>
@@ -67,22 +67,22 @@
     <header>
         <nav>
             <div class="navbar">
-                <li><a class="active" href="">Movies</a></li>
-                <li><a href="">Shows</a></li>
-                <li><a href="">Music</a></li>
+                <li><a id="movies-button" class="active" href="#" onclick="changeToMovies()">Movies</a></li>
+                <li><a id="shows-button" href="#" onclick="changeToShows()">Shows</a></li>
+                <li><a id="music-button" href="#" onclick="changeToMusic()">Music</a></li>
                 <!-- <li><a href="">Search</a></li> -->
             </div>
-            <div class="more-options">
-                <img src="./img/more-options.png" alt="more-options-button">
+            <div class="more-options" onclick="moShowClose()">
+                <img src="./img/more-options.png" alt="more-options-button" id="more-options-button">
             </div>
-            <div class="user">
-                <img src="./img/modelo-rosto.jpg" alt="user-photo" id="user-photo">
+            <div id="user">
+                <img src="./img/modelo-rosto.jpg" alt="user-photo" id="user-photo" onclick="perfilShowClose()">
                 <p id="user-name">Gabriel Magno</p>
             </div>
         </nav>
     </header>
 
-    <section class="shows-section">
+    <section class="shows-section loopingScroll">
         <div>
             <img class="banner-section" src="./img/shows/banner-jackryan.jpg" alt="">
         </div>
@@ -101,12 +101,32 @@
         <div>
             <img class="banner-section" src="./img/shows/banner-you.jpg" alt="">
         </div>
-        <div class="arrows">
-            <button><img src="./img/seta.png" alt="seta-direita"></button>
-            <button><img src="./img/seta-esquerda.png" alt="seta-esquerda"></button>
+        <div>
+            <img class="banner-section" src="./img/shows/banner-jackryan.jpg" alt="">
+        </div>
+        <div>
+            <img class="banner-section" src="./img/shows/banner-tlous.webp" alt="">
+        </div>
+        <div>
+            <img class="banner-section" src="./img/shows/banner-anne.png" alt="">
+        </div>
+        <div>
+            <img class="banner-section" src="./img/shows/banner-arrow.webp" alt="">
+        </div>
+        <div>
+            <img class="banner-section" src="./img/shows/banner-avatar.jpg" alt="">
+        </div>
+        <div>
+            <img class="banner-section" src="./img/shows/banner-you.jpg" alt="">
+        </div>
+        <div onclick="scrollr()" class="div-seta-direita">
+            <img class="seta-direita" src="./img/seta.png" alt="seta">
+        </div>
+        <div onclick="scrolll()" class="div-seta-esquerda">
+            <img class="seta-esquerda" src="./img/seta-esquerda.png" alt="seta">
         </div>
     </section>
-    <section class="movies-section section-active">
+    <section class="movies-section section-active loopingScroll">
         <div>
             <img class="banner-section" src="./img/movies/banner-alladin.jpg" alt="">
         </div>
@@ -125,14 +145,32 @@
         <div>
             <img class="banner-section" src="./img/movies/banner-rivais.webp" alt="">
         </div>
-        <div class="div-seta-direita">
+        <div>
+            <img class="banner-section" src="./img/movies/banner-alladin.jpg" alt="">
+        </div>
+        <div>
+            <img class="banner-section" src="./img/movies/banner-badboys.webp" alt="">
+        </div>
+        <div>
+            <img class="banner-section" src="./img/movies/banner-coringa.webp" alt="">
+        </div>
+        <div>
+            <img class="banner-section" src="./img/movies/banner-insurgent.webp" alt="">
+        </div>
+        <div>
+            <img class="banner-section" src="./img/movies/banner-poderosochefao.jpg" alt="">
+        </div>
+        <div>
+            <img class="banner-section" src="./img/movies/banner-rivais.webp" alt="">
+        </div>
+        <div onclick="scrollr()" class="div-seta-direita">
             <img class="seta-direita" src="./img/seta.png" alt="seta">
         </div>
-        <div class="div-seta-esquerda">
+        <div onclick="scrolll()" class="div-seta-esquerda">
             <img class="seta-esquerda" src="./img/seta-esquerda.png" alt="seta">
         </div>
     </section>
-    <section class="music-section">
+    <section class="music-section loopingScroll">
         <div>
             <img class="banner-section" src="./img/music/banner-neyo.jpg" alt="">
         </div>
@@ -151,13 +189,33 @@
         <div>
             <img class="banner-section" src="./img/music/banner-perfil.webp" alt="">
         </div>
-        <div class="div-seta-direita">
+        <div>
+            <img class="banner-section" src="./img/music/banner-neyo.jpg" alt="">
+        </div>
+        <div>
+            <img class="banner-section" src="./img/music/banner-manifesto.jpg" alt="">
+        </div>
+        <div>
+            <img class="banner-section" src="./img/music/banner-brunomars.jpg" alt="">
+        </div>
+        <div>
+            <img class="banner-section" src="./img/music/banner-tardezinha.jpg" alt="">
+        </div>
+        <div>
+            <img class="banner-section" src="./img/music/banner-starboy.jpeg" alt="">
+        </div>
+        <div>
+            <img class="banner-section" src="./img/music/banner-perfil.webp" alt="">
+        </div>
+        <div onclick="scrollr()" class="div-seta-direita">
             <img class="seta-direita" src="./img/seta.png" alt="seta">
         </div>
-        <div class="div-seta-esquerda">
+        <div onclick="scrolll()" class="div-seta-esquerda">
             <img class="seta-esquerda" src="./img/seta-esquerda.png" alt="seta">
         </div>
     </section>
+
+    <script src="./script.js"></script>
 </body>
 
 </html>

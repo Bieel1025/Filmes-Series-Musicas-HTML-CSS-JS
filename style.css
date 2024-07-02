@@ -15,7 +15,10 @@ nav {
 a {
     text-decoration: none;
 }
-.user img:hover, .more-options img:hover, .banner-section:hover {
+
+
+
+#user img:hover, .more-options img:hover, .banner-section:hover {
     cursor: pointer;
 }
 .navbar {
@@ -32,7 +35,7 @@ a {
 }
 
 
-.user {
+#user {
     display: flex;
     position: relative;
     left: 13%;
@@ -40,7 +43,7 @@ a {
     font-size: 17px;
     align-items: center;
 }
-.user img {
+#user img {
     position: relative;
     right: 30px;
     display: flex;
@@ -53,7 +56,7 @@ a {
     color: rgb(95, 95, 95);
     font-family: "Roboto", sans-serif;
 }
-.perfil-button {
+#perfil-button {
     border: 1px solid rgb(163, 163, 163);
     position: absolute;
     background: whitesmoke;
@@ -67,9 +70,18 @@ a {
     transition: all .3s ease;
 
     & a {
-        display: flex;
+        display: inline-block;
         margin-bottom: 15px;
-        text-decoration: underline;
+
+
+        & p {
+            display: inline-block;
+            text-decoration: underline;
+        }
+
+        & img {
+            display: inline-block;
+        }
     }
     & div{
         position: absolute;
@@ -91,25 +103,32 @@ a {
     position: relative;
     right: 7vw;
 }
-.more-options-tab {
+#more-options-tab {
     position: absolute;
     right: 0;
     height: 100%;
     width: 16vw;
     background: whitesmoke;
     border: 1px solid rgb(192, 192, 192);
-    z-index: 1;
+    z-index: 7;
     padding: 40px;
     padding-top: 90px;
-    transition: all .3 ease;
 
     & .window-button {
         margin: 0 auto 40px auto;
-        text-decoration: underline;
-        display: flex;
+
+        display: inline-block;
+
+        & p {
+            text-decoration: underline;
+            display: inline-block;
+        }
+        & img {
+            display: inline-block;
+        }
     }
 }
-.redes-sociais {
+#redes-sociais {
     width: 100%;
     height: 65%;
     display: flex;
@@ -143,12 +162,39 @@ a {
 
 .shows-section, .movies-section, .music-section{
     display: flex;
-     justify-content: center;
-     align-items: center;
-     width: 100%;
-     height: 70vh;
-     overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 70vh;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    scroll-behavior: smooth;
 }
+.loopingScroll::before{
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 26.5%;
+    z-index: 5;
+    height: 55%;
+    width: 100px;
+    background-image: linear-gradient(90deg, rgb(0, 0, 0), transparent);
+}
+.loopingScroll::after{
+    position: absolute;
+    content: '';
+    right: 0;
+    top: 26.5%;
+    z-index: 5;
+    height: 55%;
+    width: 100px;
+    background-image: linear-gradient(-90deg, rgb(0, 0, 0), transparent);
+}
+.loopingScroll::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
 .banner-section {
     width: 350px;
     height: 500px;
@@ -165,27 +211,40 @@ img:hover {
 .div-seta-esquerda {
     position: absolute;
     left: 15px;   
+    z-index: 6;
 }
 .seta-esquerda {
     width: 60px;
     height: 60px;
     filter: invert(85%);
     opacity: 60%;
+    z-index: 99;
 }
 .div-seta-direita {
     position: absolute;
     right: 15px;
+    z-index: 6;
 }
 .seta-direita {
     width: 60px;
     height: 60px;
     filter: invert(85%);
     opacity: 60%;
+    z-index: 99;
 }
 
 .shows-section {
-    display: none;    
+    display: none;
 }
 .music-section {
+    display: none;
+}
+.movies-section {
+    display: none;
+}
+.section-active {
+    display: flex;
+}
+.hidden {
     display: none;
 }
